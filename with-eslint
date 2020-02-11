@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+# install devDependencies
+echo 'install devDependencies'
+npm install -D eslint @specialblend/eslint-config
+
+# setup .eslintrc
+echo 'setup .eslintrc'
+npx @specialblend/cator .eslintrc {} | npx jq '.extends = "@specialblend/eslint-config"' > .eslintrc
+
+# add lint script
+echo 'add lint script'
+cp package.json package.json.bak
+echo 'saved copy of package.json to package.json.bak'
+packageJson=$(cat package.json | npx jq '.scripts.lint = "eslint ."')
+echo $packageJson | npx jq > package.json
+
+# all done !
+echo 'all done!'

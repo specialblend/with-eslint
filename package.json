@@ -1,0 +1,30 @@
+{
+  "name": "@specialblend/with-eslint",
+  "version": "0.0.0",
+  "description": "quickly setup a project with eslint",
+  "main": "with-eslint",
+  "bin": "with-eslint",
+  "scripts": {
+    "test": "true",
+    "postinstall": "chmod +x with-eslint"
+  },
+  "files": [
+    "with-eslint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/specialblend/with-eslint.git"
+  },
+  "keywords": [
+    "eslint",
+    "generator",
+    "cli"
+  ],
+  "author": "cj@specialblend.net",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/specialblend/with-eslint/issues"
+  },
+  "homepage": "https://github.com/specialblend/with-eslint#readme",
+  "dependencies": {}
+}
