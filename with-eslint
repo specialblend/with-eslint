@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo 'quickly common.sh eslint'
+echo 'quickly setup eslint'
 
 echo ''
 echo 'i am about to:'
