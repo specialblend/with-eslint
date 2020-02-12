@@ -2,14 +2,21 @@
   "name": "@specialblend/with-eslint",
   "version": "0.0.0",
   "description": "quickly setup a project with eslint",
-  "main": "with-eslint",
-  "bin": "with-eslint",
+  "main": "with-eslint.sh",
+  "bin": {
+    "with-eslint": "with-eslint",
+    "with-eslint-typescript": "with-eslint-typescript"
+  },
   "scripts": {
     "test": "true",
-    "postinstall": "chmod +x with-eslint"
+    "build": "cat common.sh with-eslint.sh > with-eslint && cat common.sh with-eslint-typescript.sh > with-eslint-typescript",
+    "preinstall": "npm run build",
+    "postinstall": "chmod +x with-eslint with-eslint-typescript"
   },
   "files": [
-    "with-eslint"
+    "common.sh",
+    "with-eslint.sh",
+    "with-eslint-typescript.sh"
   ],
   "repository": {
     "type": "git",
@@ -26,5 +33,6 @@
     "url": "https://github.com/specialblend/with-eslint/issues"
   },
   "homepage": "https://github.com/specialblend/with-eslint#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {}
 }
