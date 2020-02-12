@@ -22,7 +22,7 @@ npx @specialblend/bak .eslintrc.json
 
 # setup .eslintrc.json
 
-echo 'common.sh .eslintrc.json'
+echo 'setup .eslintrc.json'
 npx @specialblend/cator .eslintrc.json {} | npx jq ".extends = \"@specialblend/eslint-config\"" >.eslintrc.json
 
 # add lint scripts
