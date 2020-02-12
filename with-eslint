@@ -28,7 +28,7 @@ npx @specialblend/cator .eslintrc.json {} | npx jq ".extends = \"@specialblend/e
 # add lint scripts
 echo 'add lint scripts'
 package_json=$(npx @specialblend/cator package.json {})
-with_lint_script=$(echo $package_json | npx jq ".scripts.lint = \"eslint --ext .\"")
+with_lint_script=$(echo $package_json | npx jq ".scripts.lint = \"eslint .\"")
 with_lint_fix_script=$(echo $with_lint_script | npx jq ".scripts.\"lint:fix\" = \"eslint --fix .\"")
 echo $with_lint_fix_script | npx jq >package.json
 
