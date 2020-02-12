@@ -1,6 +1,6 @@
 {
   "name": "@specialblend/with-eslint",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "quickly setup a project with eslint",
   "main": "with-eslint",
   "bin": "with-eslint",
