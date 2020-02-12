@@ -4,7 +4,7 @@ echo 'quickly setup eslint'
 
 echo ''
 echo 'i am about to:'
-echo '  - npm install eslint @specialblend/eslint-config'
+echo '  - npm install -D eslint @specialblend/eslint-config'
 echo '  - set .eslintrc.json to extend @specialblend/eslint-config'
 echo '  - add lint and lint:fix scripts to package.json'
 echo ''
