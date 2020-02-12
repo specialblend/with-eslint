@@ -1,0 +1,40 @@
+#!/usr/bin/env sh
+
+echo 'quickly common.sh eslint'
+
+echo ''
+echo 'i am about to:'
+echo '  - npm install eslint @specialblend/eslint-config'
+echo '  - set .eslintrc.json to extend @specialblend/eslint-config/typescript'
+echo '  - add lint and lint:fix scripts to package.json'
+echo ''
+echo '(i will make a backup of files before changing them)'
+echo ''
+echo 'ok?'
+echo ''
+
+read -p "Press enter to continue, or ^C to cancel\n"
+
+# backup files if they exist
+
+npx @specialblend/bak package.json
+npx @specialblend/bak .eslintrc.json
+
+# setup .eslintrc.json
+
+echo 'common.sh .eslintrc.json'
+npx @specialblend/cator .eslintrc.json {} | npx jq ".extends = \"$1\"" >.eslintrc.json
+
+# add lint scripts
+echo 'add lint scripts'
+package_json=$(npx @specialblend/cator package.json {})
+with_lint_script=$(echo $package_json | npx jq ".scripts.lint = \"eslint --ext $1 .\"")
+with_lint_fix_script=$(echo $with_lint_script | npx jq ".scripts.\"lint:fix\" = \"eslint --fix --ext $1 .\"")
+echo $with_lint_fix_script | npx jq >package.json
+
+# install devDependencies
+echo 'install devDependencies'
+npm install -D eslint @specialblend/eslint-config
+
+# all done !
+echo 'all done!'

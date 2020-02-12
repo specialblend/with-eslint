@@ -2,21 +2,14 @@
   "name": "@specialblend/with-eslint",
   "version": "0.0.0",
   "description": "quickly setup a project with eslint",
-  "main": "with-eslint.sh",
-  "bin": {
-    "with-eslint": "with-eslint",
-    "with-eslint-typescript": "with-eslint-typescript"
-  },
+  "main": "with-eslint",
+  "bin": "with-eslint",
   "scripts": {
     "test": "true",
-    "build": "cat common.sh with-eslint.sh > with-eslint && cat common.sh with-eslint-typescript.sh > with-eslint-typescript",
-    "preinstall": "npm run build",
-    "postinstall": "chmod +x with-eslint with-eslint-typescript"
+    "postinstall": "chmod +x with-eslint"
   },
   "files": [
-    "common.sh",
-    "with-eslint.sh",
-    "with-eslint-typescript.sh"
+    "with-eslint"
   ],
   "repository": {
     "type": "git",
